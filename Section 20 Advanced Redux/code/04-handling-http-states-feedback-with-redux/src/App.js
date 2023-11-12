@@ -7,7 +7,7 @@ import Products from './components/Shop/Products';
 import { uiActions } from './store/ui-slice';
 import Notification from './components/UI/Notification';
 
-let isInitial = true;
+let isInitial = true; // set this variable to avoid http request to be sent whenever the App is started
 
 function App() {
   const dispatch = useDispatch();
@@ -59,7 +59,7 @@ function App() {
         })
       );
     });
-  }, [cart, dispatch]);
+  }, [cart, dispatch]); // disptach won't have any impact here because Redux makes sure dispatch function won't change
 
   return (
     <Fragment>
