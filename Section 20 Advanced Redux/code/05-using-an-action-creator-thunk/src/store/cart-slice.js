@@ -43,8 +43,10 @@ const cartSlice = createSlice({
   },
 });
 
+//when dispatch() function sees we are dispatching a function instead of an action object
+//Redux will executes this function for us
 export const sendCartData = (cart) => {
-  return async (dispatch) => {
+  return async (dispatch) => { //Redux will provide this dispatch argument automatically
     dispatch(
       uiActions.showNotification({
         status: 'pending',
